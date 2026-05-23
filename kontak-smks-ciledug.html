@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kontak — SMKS Ciledug Al-Musaddadiyah Garut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --blue-deep:   #0b3d91;
+  --blue-mid:    #1565c0;
+  --blue-bright: #1e88e5;
+  --blue-light:  #e3f0fd;
+  --blue-pale:   #f0f6ff;
+  --gold:        #ffb300;
+  --gold-light:  #ffd54f;
+  --gold-pale:   #fff8e1;
+  --gold-dark:   #e65100;
+  --bg:          #f5f9ff;
+  --white:       #ffffff;
+  --text-1:      #0d1b3e;
+  --text-2:      #3d4f6e;
+  --text-3:      #6b7fa3;
+  --border:      rgba(11,61,145,0.10);
+  --border-mid:  rgba(11,61,145,0.18);
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --shadow-sm:   0 1px 4px rgba(11,61,145,0.07),0 0 0 1px rgba(11,61,145,0.05);
+  --shadow-md:   0 4px 20px rgba(11,61,145,0.10),0 1px 4px rgba(11,61,145,0.06);
+  --shadow-lg:   0 8px 32px rgba(11,61,145,0.13),0 2px 8px rgba(11,61,145,0.07);
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text-1);
+  min-height:100vh;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:linear-gradient(90deg,var(--blue-deep) 0%,var(--blue-mid) 100%);
+  padding:8px 20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:500;
+  color:rgba(255,255,255,0.75);
+  letter-spacing:0.3px;
+  gap:6px;
+}
+.topbar span.dot{color:var(--gold);margin:0 4px;}
+
+/* ── NAV ── */
+.nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 8px rgba(11,61,145,0.06);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--blue-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:11px;color:var(--white);
+  letter-spacing:0.5px;flex-shrink:0;
+}
+.nav-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:14px;color:var(--blue-deep);
+  line-height:1.2;
+}
+.nav-name small{display:block;font-weight:400;font-size:10.5px;color:var(--text-3);}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--text-2);
+  text-decoration:none;padding:6px 11px;border-radius:var(--radius-sm);
+  transition:background .15s,color .15s;
+}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-pale);color:var(--blue-deep);}
+.nav-links a.active{font-weight:600;}
+.nav-badge{
+  background:var(--gold);color:var(--blue-deep);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:10px;font-weight:700;
+  padding:3px 9px;border-radius:20px;
+  margin-left:4px;letter-spacing:0.2px;
+}
+@media(max-width:640px){.nav-links{display:none;}}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(145deg,var(--blue-deep) 0%,#0f4db5 50%,var(--blue-bright) 100%);
+  padding:56px 24px 72px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+/* geo deco */
+.hero::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;
+  border:1.5px solid rgba(255,179,0,0.12);
+  border-radius:50%;pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-60px;left:-60px;
+  width:220px;height:220px;
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:50%;pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;max-width:560px;margin:0 auto;}
+
+/* logo */
+.hero-logo{
+  width:80px;height:80px;border-radius:50%;
+  border:2.5px solid rgba(255,179,0,0.40);
+  background:rgba(255,255,255,0.10);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;overflow:hidden;
+  animation:pulse 3s ease-in-out infinite;
+}
+.hero-logo img{width:62px;height:62px;object-fit:contain;border-radius:50%;}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,179,0,0.30);}
+  50%{box-shadow:0 0 0 14px rgba(255,179,0,0);}
+}
+
+.hero-eyebrow{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:10.5px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:12px;
+}
+.hero-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(24px,5vw,38px);font-weight:800;
+  color:var(--white);line-height:1.2;margin-bottom:6px;
+}
+.hero-title em{
+  font-style:italic;font-weight:400;
+  color:var(--gold-light);
+}
+.hero-sub{
+  font-size:13.5px;color:rgba(255,255,255,0.60);
+  font-weight:300;margin-bottom:20px;letter-spacing:0.2px;
+}
+
+/* badges row */
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
+.htag{
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.85);
+  font-size:11.5px;font-weight:500;
+  padding:4px 12px;border-radius:20px;
+  display:flex;align-items:center;gap:5px;
+}
+.htag .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;}
+
+/* ── WAVE ── */
+.wave-wrap{background:var(--bg);margin-top:-2px;}
+.wave-wrap svg{display:block;width:100%;}
+
+/* ── LAYOUT ── */
+.container{max-width:840px;margin:0 auto;padding:0 20px 60px;}
+.section-gap{margin-top:-40px;position:relative;z-index:5;}
+
+/* ── SECTION HEADER ── */
+.sec-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.sec-pill{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--blue-deep);
+  background:var(--blue-pale);
+  border:1px solid rgba(11,61,145,0.15);
+  padding:3px 10px;border-radius:20px;
+}
+.sec-line{flex:1;height:1px;background:var(--border);}
+
+/* ── CONTACT CARDS GRID ── */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:12px;margin-bottom:12px;
+}
+
+.ccard{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:18px 16px;
+  display:flex;gap:14px;align-items:flex-start;
+  box-shadow:var(--shadow-sm);
+  text-decoration:none;color:inherit;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  position:relative;overflow:hidden;
+}
+.ccard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2.5px;
+  background:linear-gradient(90deg,var(--blue-deep),var(--blue-bright));
+  opacity:0;transition:opacity .2s;
+}
+.ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-mid);}
+.ccard:hover::before{opacity:1;}
+
+.ccard-icon{
+  width:42px;height:42px;border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:18px;
+}
+.ci-blue{background:var(--blue-pale);color:var(--blue-deep);}
+.ci-gold{background:var(--gold-pale);color:#a67800;}
+.ci-teal{background:#e0f7f1;color:#00695c;}
+.ci-wa  {background:#e8f5e9;color:#2e7d32;}
+
+.ccard-body{flex:1;min-width:0;}
+.ccard-label{
+  font-size:10px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--text-3);margin-bottom:3px;
+}
+.ccard-value{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14.5px;font-weight:600;color:var(--text-1);
+  word-break:break-word;line-height:1.4;
+}
+.ccard-value a{color:var(--blue-deep);text-decoration:none;}
+.ccard-value a:hover{text-decoration:underline;}
+.ccard-hint{font-size:11px;color:var(--text-3);margin-top:2px;}
+.ccard-arrow{
+  position:absolute;bottom:14px;right:14px;
+  font-size:14px;color:var(--text-3);opacity:0;
+  transition:opacity .2s,transform .2s;
+}
+.ccard:hover .ccard-arrow{opacity:1;transform:translateX(2px);}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:28px 0;}
+
+/* ── CTA BUTTONS ── */
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:50px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13.5px;font-weight:600;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:transform .18s,box-shadow .18s,background .18s;
+  white-space:nowrap;
+}
+.btn svg{width:16px;height:16px;flex-shrink:0;}
+.btn-gold{
+  background:var(--gold);color:var(--blue-deep);
+  box-shadow:0 4px 18px rgba(255,179,0,0.30);
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,179,0,0.40);}
+.btn-blue{
+  background:var(--blue-deep);color:var(--white);
+  box-shadow:0 4px 18px rgba(11,61,145,0.22);
+}
+.btn-blue:hover{background:var(--blue-mid);transform:translateY(-2px);}
+.btn-wa{
+  background:#25d366;color:#fff;
+  box-shadow:0 4px 16px rgba(37,211,102,0.25);
+}
+.btn-wa:hover{background:#1aad54;transform:translateY(-2px);}
+.btn-outline{
+  background:var(--white);color:var(--blue-deep);
+  border:1.5px solid var(--border-mid);
+  box-shadow:var(--shadow-sm);
+}
+.btn-outline:hover{border-color:var(--blue-deep);background:var(--blue-pale);transform:translateY(-2px);}
+
+/* ── MAP CARD ── */
+.map-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+  overflow:hidden;
+  margin-bottom:12px;
+}
+.map-header{
+  padding:16px 18px;
+  display:flex;align-items:flex-start;gap:12px;
+  border-bottom:1px solid var(--border);
+}
+.map-icon-wrap{
+  width:40px;height:40px;border-radius:var(--radius-sm);
+  background:var(--blue-pale);color:var(--blue-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;margin-top:1px;
+}
+.map-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:14px;color:var(--text-1);margin-bottom:2px;
+}
+.map-addr{font-size:12.5px;color:var(--text-2);line-height:1.5;}
+.map-frame{width:100%;height:300px;border:none;display:block;}
+
+/* ── INFO STRIP (like "Portal Administrasi Aktif" topbar) ── */
+.info-strip{
+  background:linear-gradient(135deg,var(--blue-deep) 0%,#0f4db5 100%);
+  border-radius:var(--radius-md);
+  padding:18px 20px;
+  display:flex;flex-wrap:wrap;gap:14px;
+  align-items:center;justify-content:space-between;
+  margin-bottom:28px;
+  border:1px solid rgba(11,61,145,0.20);
+}
+.is-left strong{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14.5px;font-weight:700;color:var(--white);
+  display:block;margin-bottom:3px;
+}
+.is-left span{font-size:12px;color:rgba(255,255,255,0.60);font-weight:300;}
+.badge-row{display:flex;flex-wrap:wrap;gap:7px;}
+.badge{
+  background:rgba(255,179,0,0.15);
+  border:1px solid rgba(255,179,0,0.28);
+  color:var(--gold-light);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:11px;font-weight:600;
+  padding:4px 11px;border-radius:20px;letter-spacing:0.2px;
+}
+
+/* ── IDENTITY CARD (like data satuan pendidikan) ── */
+.identity-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+  overflow:hidden;
+  margin-bottom:12px;
+}
+.identity-card-head{
+  background:linear-gradient(90deg,var(--blue-pale),var(--white));
+  border-bottom:1px solid var(--border);
+  padding:14px 18px;
+  display:flex;align-items:center;gap:10px;
+}
+.identity-card-head-icon{font-size:18px;}
+.identity-card-head-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:14px;color:var(--blue-deep);
+}
+.identity-card-head-sub{font-size:11px;color:var(--text-3);}
+.id-table{width:100%;border-collapse:collapse;}
+.id-table tr{border-bottom:1px solid var(--border);}
+.id-table tr:last-child{border-bottom:none;}
+.id-table td{padding:11px 18px;font-size:13px;vertical-align:top;}
+.id-table td:first-child{
+  color:var(--text-3);white-space:nowrap;width:44%;
+  display:flex;align-items:center;gap:7px;
+  font-weight:500;font-size:12.5px;
+}
+.id-table td:last-child{color:var(--text-1);font-weight:500;word-break:break-word;}
+.id-table td span.icon{font-size:14px;width:18px;text-align:center;}
+.id-table a{color:var(--blue-deep);text-decoration:none;}
+.id-table a:hover{text-decoration:underline;}
+
+/* AKREDITASI BADGE in table */
+.akr-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold-pale);border:1px solid rgba(255,179,0,0.30);
+  color:#7a5500;border-radius:var(--radius-xs);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:12px;padding:3px 10px;
+}
+
+/* ── QUICK CONTACTS ROW ── */
+.quick-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin-bottom:28px;
+}
+@media(max-width:480px){.quick-row{grid-template-columns:1fr;}}
+.qcard{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:14px 14px 12px;
+  text-align:center;box-shadow:var(--shadow-sm);
+  text-decoration:none;color:inherit;
+  transition:transform .18s,box-shadow .18s;
+  display:block;
+}
+.qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.qcard-emoji{font-size:24px;margin-bottom:8px;}
+.qcard-lbl{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:0.5px;
+  color:var(--text-3);text-transform:uppercase;margin-bottom:4px;
+}
+.qcard-val{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;font-weight:600;color:var(--blue-deep);
+  word-break:break-all;
+}
+
+/* ── FOOTER ── */
+.site-footer{
+  background:var(--blue-deep);
+  padding:32px 24px 24px;
+  margin-top:40px;
+}
+.footer-inner{max-width:840px;margin:0 auto;}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.footer-logo{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:11px;color:var(--white);
+}
+.footer-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:14px;color:var(--white);
+  line-height:1.3;
+}
+.footer-name small{font-weight:400;font-size:10.5px;color:rgba(255,255,255,0.50);display:block;}
+.footer-desc{font-size:12px;color:rgba(255,255,255,0.50);margin-bottom:18px;line-height:1.6;max-width:360px;}
+.footer-links{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:20px;}
+.footer-links a{
+  font-size:12.5px;color:rgba(255,255,255,0.60);
+  text-decoration:none;transition:color .15s;
+}
+.footer-links a:hover{color:var(--gold-light);}
+.footer-divider{height:1px;background:rgba(255,255,255,0.10);margin-bottom:14px;}
+.footer-copy{font-size:11.5px;color:rgba(255,255,255,0.35);}
+
+/* ── FADE ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(16px);animation:fadeUp .5s ease forwards;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.d1{animation-delay:.06s}.d2{animation-delay:.14s}.d3{animation-delay:.22s}
+.d4{animation-delay:.30s}.d5{animation-delay:.38s}.d6{animation-delay:.46s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:520px){
+  .hero{padding:40px 16px 60px;}
+  .cards-grid{grid-template-columns:1fr;}
+  .cta-row{flex-direction:column;}
+  .btn{justify-content:center;}
+  .info-strip{flex-direction:column;align-items:flex-start;}
+  .quick-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  🏛 Swasta · SMK
+  <span class="dot">·</span>
+  📍 Tarogong Kidul, Kab. Garut
+  <span class="dot">·</span>
+  NPSN 20209207
+  <span class="dot">·</span>
+  ⭐ Akreditasi A — 2023
+</div>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-logo">SMK<br>CAM</div>
+    <div class="nav-name">
+      SMKS Ciledug Al-Musaddadiyah
+      <small>Garut, Jawa Barat</small>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#">Beranda</a>
+    <a href="#identitas">Profil</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#" class="active">Kontak</a>
+    <span class="nav-badge">🎓 Alumni CALM</span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD-8YPFS6i86EyZZNDUhwuam5ro_mtc9So2muvB7EDWz1Zp6rarLubvVS3vfVVoto_S6SaHlIPPnmNaddUugGUztWkJYhDwwT8CU1BcUuq9TNyxnHKa6B44iDBx6LjR1-z3r7_C34jviaWeOYgk4bNJHsziPV4KR5mQjY69HVhyphenhyphenR3STD4xp-b46x_HeR4/s320/An8Em6pLCtVUNFZTK-rgdQG9pKiDxE1AR7m_1QO_5slD3C5qFXYq7S9suI1ztpViB_aUnbOGE2-Y71AU9SF3GjQzZ09xbw5aat-JT_7ptJ4VcfdGeJ73DWbHD9IDtVHa_16MjCj09HJ4eGBvZMo-removebg-preview.png"
+        alt="Logo SMKS Ciledug Al-Musaddadiyah"
+      />
+    </div>
+    <p class="hero-eyebrow">Hubungi Kami</p>
+    <h1 class="hero-title">SMKS Ciledug<br><em>Al-Musaddadiyah</em></h1>
+    <p class="hero-sub">Sekolah Menengah Kejuruan Swasta · Garut, Jawa Barat</p>
+    <div class="hero-tags">
+      <span class="htag"><span class="dot"></span>6 Program Keahlian</span>
+      <span class="htag"><span class="dot"></span>110 Peserta Didik</span>
+      <span class="htag"><span class="dot"></span>Akreditasi A · 2023</span>
+      <span class="htag"><span class="dot"></span>Yayasan Al-Musaddadiyah</span>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-wrap">
+  <svg viewBox="0 0 1440 54" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 54 C360 0 1080 0 1440 54 L1440 54 L0 54 Z" fill="#f5f9ff"/>
+  </svg>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="container section-gap">
+
+  <!-- CONTACT CARDS -->
+  <div class="sec-head fade-up d1">
+    <span class="sec-pill">Informasi Kontak</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <a class="ccard fade-up d1" href="tel:0262238585">
+      <div class="ccard-icon ci-blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.12 2.38 2 2 0 012.11.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-.46a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      <div class="ccard-body">
+        <p class="ccard-label">Telepon Sekolah</p>
+        <p class="ccard-value">(0262) 238585</p>
+        <p class="ccard-hint">Jam kerja: 07.00–15.00 WIB</p>
+      </div>
+      <span class="ccard-arrow">→</span>
+    </a>
+
+    <a class="ccard fade-up d2" href="https://wa.me/6287856681523" target="_blank" rel="noopener">
+      <div class="ccard-icon ci-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.855L.073 23.464a.5.5 0 00.607.61l5.748-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.869 0-3.624-.497-5.14-1.365l-.368-.213-3.815 1.003 1.018-3.712-.231-.381A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+      </div>
+      <div class="ccard-body">
+        <p class="ccard-label">WhatsApp Info</p>
+        <p class="ccard-value">0878-5668-1523</p>
+        <p class="ccard-hint">Informasi & pendaftaran</p>
+      </div>
+      <span class="ccard-arrow">→</span>
+    </a>
+
+    <a class="ccard fade-up d2" href="mailto:info@smkciledug.sch.id">
+      <div class="ccard-icon ci-gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="22,4 12,13 2,4"/>
+        </svg>
+      </div>
+      <div class="ccard-body">
+        <p class="ccard-label">Email Resmi</p>
+        <p class="ccard-value" style="font-size:13px;">info@smkciledug.sch.id</p>
+        <p class="ccard-hint">Korespondensi resmi</p>
+      </div>
+      <span class="ccard-arrow">→</span>
+    </a>
+
+    <a class="ccard fade-up d3" href="https://smkciledugalmusaddadiyah.sch.id" target="_blank" rel="noopener">
+      <div class="ccard-icon ci-blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+        </svg>
+      </div>
+      <div class="ccard-body">
+        <p class="ccard-label">Website Resmi</p>
+        <p class="ccard-value" style="font-size:12px;">smkciledugalmusaddadiyah.sch.id</p>
+        <p class="ccard-hint">Portal informasi sekolah</p>
+      </div>
+      <span class="ccard-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- CTA BUTTONS -->
+  <div class="cta-row fade-up d3">
+    <a class="btn btn-wa" href="https://wa.me/6287856681523" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.855L.073 23.464a.5.5 0 00.607.61l5.748-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.869 0-3.624-.497-5.14-1.365l-.368-.213-3.815 1.003 1.018-3.712-.231-.381A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Chat WhatsApp
+    </a>
+    <a class="btn btn-gold" href="tel:0262238585">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.12 2.38 2 2 0 012.11.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-.46a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Telepon Sekolah
+    </a>
+    <a class="btn btn-outline" href="mailto:info@smkciledug.sch.id">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      Kirim Email
+    </a>
+    <a class="btn btn-outline" href="https://smkciledugalmusaddadiyah.sch.id" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      Website Resmi
+    </a>
+  </div>
+
+  <div class="divider fade-up d3"></div>
+
+  <!-- IDENTITAS SEKOLAH -->
+  <div id="identitas">
+    <div class="sec-head fade-up d3">
+      <span class="sec-pill">Identitas Sekolah</span>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="identity-card fade-up d4">
+      <div class="identity-card-head">
+        <span class="identity-card-head-icon">🏫</span>
+        <div>
+          <div class="identity-card-head-title">Data Satuan Pendidikan</div>
+          <div class="identity-card-head-sub">Sumber: Referensi Kemendikdasmen · NPSN 20209207</div>
+        </div>
+      </div>
+      <table class="id-table">
+        <tr>
+          <td><span class="icon">🏫</span> Nama Sekolah</td>
+          <td>SMKS Ciledug Al-Musaddadiyah Garut</td>
+        </tr>
+        <tr>
+          <td><span class="icon">🔢</span> NPSN</td>
+          <td>20209207</td>
+        </tr>
+        <tr>
+          <td><span class="icon">🏛</span> Status / Bentuk</td>
+          <td>Swasta · SMK</td>
+        </tr>
+        <tr>
+          <td><span class="icon">👤</span> Kepala Sekolah</td>
+          <td>M. Nasrullah Ramdhan, M.Si</td>
+        </tr>
+        <tr>
+          <td><span class="icon">📍</span> Alamat</td>
+          <td>Jl. Mayor Syamsu No.2, Jayaraga, Tarogong Kidul — 44151</td>
+        </tr>
+        <tr>
+          <td><span class="icon">📞</span> Telepon</td>
+          <td><a href="tel:0262238585">(0262) 238585</a></td>
+        </tr>
+        <tr>
+          <td><span class="icon">✉️</span> Email</td>
+          <td><a href="mailto:info@smkciledug.sch.id">info@smkciledug.sch.id</a></td>
+        </tr>
+        <tr>
+          <td><span class="icon">🌐</span> Website</td>
+          <td><a href="https://smkciledugalmusaddadiyah.sch.id" target="_blank" rel="noopener">smkciledugalmusaddadiyah.sch.id ↗</a></td>
+        </tr>
+        <tr>
+          <td><span class="icon">⭐</span> Akreditasi</td>
+          <td><span class="akr-badge">⭐ A · SK 036/BAN-PDM/SK/2023</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider fade-up d4"></div>
+
+  <!-- QUICK CONTACT ROW -->
+  <div class="sec-head fade-up d4">
+    <span class="sec-pill">Akses Cepat</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="quick-row fade-up d4">
+    <a class="qcard" href="tel:0262238585">
+      <div class="qcard-emoji">📞</div>
+      <div class="qcard-lbl">Telepon</div>
+      <div class="qcard-val">(0262) 238585</div>
+    </a>
+    <a class="qcard" href="https://wa.me/6287856681523" target="_blank" rel="noopener">
+      <div class="qcard-emoji">💬</div>
+      <div class="qcard-lbl">WhatsApp</div>
+      <div class="qcard-val">0878-5668-1523</div>
+    </a>
+    <a class="qcard" href="mailto:info@smkciledug.sch.id">
+      <div class="qcard-emoji">📧</div>
+      <div class="qcard-lbl">Email</div>
+      <div class="qcard-val">info@smkciledug.sch.id</div>
+    </a>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip fade-up d4">
+    <div class="is-left">
+      <strong>⏰ Jam Operasional Sekolah</strong>
+      <span>Senin – Sabtu &nbsp;·&nbsp; 07.00 – 15.00 WIB</span>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Swasta</span>
+      <span class="badge">SMK</span>
+      <span class="badge">Akreditasi A</span>
+      <span class="badge">Garut</span>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div id="lokasi">
+    <div class="sec-head fade-up d5">
+      <span class="sec-pill">Lokasi Sekolah</span>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="map-card fade-up d5">
+      <div class="map-header">
+        <div class="map-icon-wrap">📍</div>
+        <div>
+          <div class="map-title">SMKS Ciledug Al-Musaddadiyah Garut</div>
+          <div class="map-addr">Jl. Mayor Syamsu No.2, Jayaraga, Tarogong Kidul, Kab. Garut, Jawa Barat 44151</div>
+        </div>
+      </div>
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0!2d107.9027!3d-7.2211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68b93d7a5c0000%3A0x1!2sJl.+Mayor+Syamsu+No.2%2C+Jayaraga%2C+Tarogong+Kidul%2C+Garut!5e0!3m2!1sid!2sid!4v1700000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokasi SMKS Ciledug Al-Musaddadiyah Garut"
+      ></iframe>
+    </div>
+
+    <div class="cta-row fade-up d5">
+      <a class="btn btn-blue" href="https://maps.google.com/?q=Jl.+Mayor+Syamsu+No.2+Jayaraga+Tarogong+Kidul+Garut" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        Buka di Google Maps
+      </a>
+      <a class="btn btn-outline" href="https://referensi.data.kemendikdasmen.go.id/snpmb/site/sekolah?npsn=20209207" target="_blank" rel="noopener">
+        🏛 Data Kemendikdasmen ↗
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SMK<br>CAM</div>
+      <div class="footer-name">
+        SMKS Ciledug Al-Musaddadiyah
+        <small>NPSN 20209207 · Akreditasi A · Swasta</small>
+      </div>
+    </div>
+    <p class="footer-desc">
+      Sekolah Menengah Kejuruan Swasta di bawah Yayasan Al-Musaddadiyah. Melayani 110 peserta didik pada 6 program keahlian di Tarogong Kidul, Kabupaten Garut, Jawa Barat.
+    </p>
+    <div class="footer-links">
+      <a href="tel:0262238585">📞 (0262) 238585</a>
+      <a href="https://wa.me/6287856681523" target="_blank">💬 0878-5668-1523</a>
+      <a href="mailto:info@smkciledug.sch.id">✉️ info@smkciledug.sch.id</a>
+      <a href="https://smkciledugalmusaddadiyah.sch.id" target="_blank">🌐 Website Resmi</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">© 2025 SMKS Ciledug Al-Musaddadiyah Garut · 🎓 Alumni CALM · Jl. Mayor Syamsu No.2, Jayaraga, Tarogong Kidul, Garut 44151</p>
+  </div>
+</footer>
+
+</body>
+</html>
